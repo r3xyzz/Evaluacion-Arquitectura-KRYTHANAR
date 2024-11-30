@@ -3,44 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Booking</title>
+    <title>Menu</title>
     <link rel="stylesheet" href="CSS/estilo.css">
 </head>
 <body>
     <header>
-        <h1>KRYSTHANAR Hotel Booking</h1>
+        <h1>Menu Principal KRYSTHANAR</h1>
     </header>
 
-    <main>
-        <section class="booking-form">
-            <h2>Reserve Your Stay</h2>
-            <form id="bookingForm">
-                <label for="checkin">Check-in Date:</label>
-                <input type="date" id="checkin" name="checkin" required>
-
-                <label for="checkout">Check-out Date:</label>
-                <input type="date" id="checkout" name="checkout" required>
-
-                <label for="roomType">Room Type:</label>
-                <select id="roomType" name="roomType" required>
-                    <option value="single">Single</option>
-                    <option value="double">Double</option>
-                    <option value="suite">Suite</option>
-                </select>
-
-                <label for="guests">Number of Guests:</label>
-                <input type="number" id="guests" name="guests" min="1" max="10" required>
-
-                <button type="submit">Book Now</button>
-            </form>
-        </section>
-
-        <section id="confirmation" class="hidden">
-            <h2>Booking Confirmation</h2>
-            <p id="confirmationMessage"></p>
-        </section>
+    <main class="menu-container">
+        <button onclick="navigate('santiago')">Hacer reserva Santiago</button>
+        <button onclick="navigate('v-region')">Hacer reserva V Región</button>
+        <button onclick="navigate('eventos')">Espacio de Evento</button>
+        <button onclick="navigate('perfil')">Perfil</button>
     </main>
 
-    <script src="JS/script.js"></script>
+    <script src="JS/menu-scripts.js"></script>
 </body>
 </html>
