@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: #fdf6e5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .form-container h2 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container .btn {
+            background-color: #34495e;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .form-container header img {
+            width: 100px;
+            height: auto; 
+            display: block;
+            margin: 0 auto 15px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="form-container">
+
+        <header>
+            <img src="../IMG/Logo.png" alt="Logo"> 
+        </header>
+
+        <h2>Nombre Completo</h2>
+        <input type="text" placeholder="Pepito Flores" required>
+
+        <h2>Rut</h2>
+        <input type="text" placeholder="111.111.111-1" required>
+
+        <h2>Correo</h2>
+        <input type="email" placeholder="ejemplo@gmail0.com" required>
+
+        <h2>Contraseña</h2>
+        <input type="password" placeholder="*********" required>
+
+        <button class="btn">Registrar</button>
+    </div>
+
+</body>
+</html>
