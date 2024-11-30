@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: #fdf6e5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .form-container h2 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container .btn {
+            background-color: #34495e;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .form-container .btn:hover {
+            background-color: #2c3e50;
+        }
+        .form-container .forgot-password {
+            color: #e74c3c;
+            font-size: 14px;
+            text-decoration: none;
+            display: block;
+            margin-top: 5px;
+        }
+        .form-container .register {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .form-container .register a {
+            color: #34495e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .form-container .google-btn {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        .form-container .google-btn img {
+            width: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+        <div class="form-container">
+
+            <header>
+                <h1>KRYSTHANAR</h1>
+            </header>
+
+
+            <h2>Introduce tu correo</h2>
+            <input type="email" placeholder="ejemplo@gmail.com" required>
+    
+            <h2>Introduce tu contraseña</h2>
+            <input type="password" placeholder="Contraseña" required>
+    
+            <button class="btn">Ingresar</button>
+            <a href="#" class="forgot-password">Recuperar contraseña</a>
+    
+            <div class="register">
+                ¿No tienes una cuenta? <a href="#">Regístrate</a>
+            </div>
+    
+            <button class="google-btn">
+                Continuar con Google
+            </button>
+        </div>
+
+</body>
+</html>
