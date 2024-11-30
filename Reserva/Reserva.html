@@ -27,9 +27,9 @@
 
                 <div class="form-group">
                     <label for="rooms">Habitaciones:</label>
-                    <select id="rooms" name="rooms" required>
+                    <select id="rooms" name="rooms" required onchange="calculatePrice()">
                         <option value="" disabled selected>Selecciona el número de habitaciones</option>
-                        <!-- Genera las opciones de 1 a 10 -->
+                        <!-- Generar opciones de 1 a 10 -->
                         <script>
                             for (let i = 1; i <= 10; i++) {
                                 document.write(`<option value="${i}">${i}</option>`);
@@ -38,9 +38,14 @@
                     </select>
                 </div>
 
-                <button type="button" class="btn-extras" onclick="window.location.href='../Reserva/Reserva2.html';">Extras</button>
+                <!-- Muestra el precio total -->
+                <div class="form-group">
+                    <p>Total: $<span id="totalPrice">0</span></p>
+                </div>
 
-                <button type="button" class="btn-reservar" onclick="window.location.href='../Pago/Pagar.html';">Reservar</button>
+                <button type="button" class="btn-extras" onclick="goToExtras()">Extras</button>
+                <button type="button" class="btn-reservar" onclick="goToPayment()">Reservar</button>
+
 
             </form>
         </section>

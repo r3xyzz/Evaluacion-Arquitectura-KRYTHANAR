@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagar Reserva</title>
     <style>
+        /* Estilo del pago */
         body {
             font-family: Arial, sans-serif;
             background-color: #fdf6e5;
@@ -81,10 +82,34 @@
         <!-- Total -->
         <h2>Total a pagar</h2>
         <div class="divider"></div>
-        <p class="total-to-pay">$ 000.000</p>
+        <p class="total-to-pay">$ <span id="totalAmount">000.000</span></p>
 
         <!-- Pay Button -->
         <button class="pay-button">Realizar pago</button>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Recuperar el total de habitaciones desde localStorage
+            const roomTotal = parseInt(localStorage.getItem('roomTotal')) || 0;
+
+            // Recuperar el total de servicios extras desde localStorage (si existe)
+            const extrasTotal = parseInt(localStorage.getItem('extrasTotal')) || 0;
+
+            // Calcular el total general
+            const totalToPay = roomTotal + extrasTotal;
+
+            // Mostrar el total en la página
+            document.getElementById('totalAmount').innerText = totalToPay.toLocaleString();
+
+            // Manejar el botón de pago
+            document.querySelector('.pay-button').addEventListener('click', () => {
+                alert(`Pago realizado con éxito. Total pagado: $${totalToPay.toLocaleString()}`);
+                // Limpiar localStorage (opcional)
+                localStorage.removeItem('roomTotal');
+                localStorage.removeItem('extrasTotal');
+            });
+        });
+    </script>
 </body>
 </html>

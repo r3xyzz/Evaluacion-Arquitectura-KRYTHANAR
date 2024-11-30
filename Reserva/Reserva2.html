@@ -3,53 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios Extras</title>
+    <title>Reserva Servicios</title>
     <link rel="stylesheet" href="../CSS/Reserva2css.css">
 </head>
 <body>
-    <header class="header">
-        <h1>Servicios Extras</h1>
-    </header>
+    <h1>Selecciona los Servicios Extras</h1>
 
-    <main>
-        <section class="extra-services-form">
-            <form id="extraServicesForm">
-                <div class="form-group">
-                    <input type="checkbox" id="baile" name="services" value="Baile">
-                    <label for="baile">$60 Baile Salsa</label>
-                </div>
-
-                <div class="form-group">
-                    <input type="checkbox" id="karaoke" name="services" value="Karaoke">
-                    <label for="karaoke">$50 Karaoke</label>
-                </div>
-
-                <div class="form-group">
-                    <input type="checkbox" id="gym" name="services" value="Gym">
-                    <label for="gym">$100 Gym</label>
-                </div>
-
-                <div class="form-group">
-                    <input type="checkbox" id="jacuzzi" name="services" value="Jacuzzi">
-                    <label for="jacuzzi">$150 Jacuzzi</label>
-                </div>
-
-                <button type="submit" class="btn-agregar">Agregar</button>
-            </form>
-        </section>
-
-        <!-- Popup Modal -->
-        <div id="popup" class="popup hidden">
-            <div class="popup-content">
-                <p>Los servicios extras a la reserva se realizaron con éxito.</p>
-                <form action="../Pago/Pagar.html" method="get">
-                    <button type="submit" class="btn-reservar">Continuar</button>
-                </form>
-            </div>
+    <form id="extrasForm">
+        <div>
+            <input type="checkbox" id="baile" name="extras" value="60">
+            <label for="baile">Baile Salsa - $60</label>
         </div>
+        <div>
+            <input type="checkbox" id="karaoke" name="extras" value="50">
+            <label for="karaoke">Karaoke - $50</label>
+        </div>
+        <div>
+            <input type="checkbox" id="gym" name="extras" value="100">
+            <label for="gym">Gym - $100</label>
+        </div>
+        <div>
+            <input type="checkbox" id="jacuzzi" name="extras" value="150">
+            <label for="jacuzzi">Jacuzzi - $150</label>
+        </div>
+        <button type="submit">Continuar</button>
+    </form>
 
-    </main>
+    <script>
+        document.getElementById('extrasForm').addEventListener('submit', function (event) {
+            event.preventDefault();
 
-    <script src="../JS/reserva2js.js"></script>
+            // Calcular el total de los servicios seleccionados
+            const checkboxes = document.querySelectorAll('input[name="extras"]:checked');
+            let total = 0;
+            checkboxes.forEach((checkbox) => {
+                total += parseInt(checkbox.value);
+            });
+
+            // Guardar el total en localStorage
+            localStorage.setItem('extrasTotal', total);
+
+            // Redirigir a pagar.html
+            window.location.href = '../Pago/Pagar.html';
+        });
+    </script>
 </body>
 </html>
