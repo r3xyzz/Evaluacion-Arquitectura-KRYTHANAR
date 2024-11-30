@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagar Reserva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdf6e5;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .payment-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .payment-container img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .payment-container h1 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #34495e;
+        }
+        .payment-container h2 {
+            font-size: 16px;
+            margin: 15px 0 10px;
+            color: #34495e;
+        }
+        .payment-methods img {
+            width: 100px;
+            margin: 10px;
+        }
+        .total-to-pay {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        .divider {
+            width: 80%;
+            height: 2px;
+            background-color: #ccc;
+            margin: 10px auto;
+        }
+        .pay-button {
+            background-color: #34495e;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <img src="/IMG/logo.png" alt="Logo">
+        <h1>Pagar reserva</h1>
+        <p>KRYTHANAR HOTEL</p>
+
+        <!-- Payment Methods -->
+        <h2>Formas de pago</h2>
+        <div class="payment-methods">
+            <img src="/IMG/visa.png" alt="Visa y MasterCard">
+            <img src="/IMG/redcompra.png" alt="RedCompra">
+        </div>
+
+        <!-- Total -->
+        <h2>Total a pagar</h2>
+        <div class="divider"></div>
+        <p class="total-to-pay">$ 000.000</p>
+
+        <!-- Pay Button -->
+        <button class="pay-button">Realizar pago</button>
+    </div>
+</body>
+</html>
