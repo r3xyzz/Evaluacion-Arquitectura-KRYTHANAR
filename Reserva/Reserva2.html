@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Extras</title>
+    <link rel="stylesheet" href="../CSS/Reserva2css.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Servicios Extras</h1>
+    </header>
+
+    <main>
+        <section class="extra-services-form">
+            <form id="extraServicesForm">
+                <div class="form-group">
+                    <input type="checkbox" id="baile" name="services" value="Baile">
+                    <label for="baile">$60 Baile Salsa</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" id="karaoke" name="services" value="Karaoke">
+                    <label for="karaoke">$50 Karaoke</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" id="gym" name="services" value="Gym">
+                    <label for="gym">$100 Gym</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" id="jacuzzi" name="services" value="Jacuzzi">
+                    <label for="jacuzzi">$150 Jacuzzi</label>
+                </div>
+
+                <button type="submit" class="btn-agregar">Agregar</button>
+            </form>
+        </section>
+
+        <!-- Popup Modal -->
+        <div id="popup" class="popup hidden">
+            <div class="popup-content">
+                <p>Los servicios extras a la reserva se realizaron con éxito.</p>
+                <form action="../Pago/Pagar.html" method="get">
+                    <button type="submit" class="btn-reservar">Continuar</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="../JS/reserva2js.js"></script>
+</body>
+</html>
