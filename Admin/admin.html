@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Reservas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      color: #4CAF50;
+    }
+
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: white;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+
+    form {
+      width: 90%;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    form h2 {
+      margin-bottom: 15px;
+      color: #4CAF50;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .actions button {
+      padding: 5px 10px;
+      font-size: 14px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .actions button:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gestión de Reservas</h1>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Usuario</th>
+        <th>Fecha</th>
+        <th>Habitación</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="reservasTabla">
+      <!-- Reservas existentes -->
+    </tbody>
+  </table>
+
+  <form id="formReserva">
+    <h2>Agregar Reserva</h2>
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" name="usuario" required>
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha" required>
+    <label for="habitacion">Habitación:</label>
+    <input type="text" id="habitacion" name="habitacion" required>
+    <label for="estado">Estado:</label>
+    <select id="estado" name="estado">
+      <option value="Pendiente">Pendiente</option>
+      <option value="Confirmada">Confirmada</option>
+      <option value="Cancelada">Cancelada</option>
+    </select>
+    <button type="submit">Agregar Reserva</button>
+    <button onclick="window.location.href='Proovedores.html';" type="submit">Proovedores</button>
+  </form>
+
+  <script>
+    let reservas = [
+      { id: 1, usuario: 'Juan Pérez', fecha: '2024-12-10', habitacion: '101', estado: 'Confirmada' },
+      { id: 2, usuario: 'María Gómez', fecha: '2024-12-12', habitacion: '202', estado: 'Pendiente' },
+    ];
+
+    const reservasTabla = document.getElementById('reservasTabla');
+    const formReserva = document.getElementById('formReserva');
+
+    // Renderizar reservas en la tabla
+    function renderReservas() {
+      reservasTabla.innerHTML = '';
+      reservas.forEach((reserva, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${reserva.id}</td>
+          <td>${reserva.usuario}</td>
+          <td>${reserva.fecha}</td>
+          <td>${reserva.habitacion}</td>
+          <td>${reserva.estado}</td>
+          <td class="actions">
+            <button onclick="eliminarReserva(${index})">Eliminar</button>
+          </td>
+        `;
+        reservasTabla.appendChild(row);
+      });
+    }
+
+    // Agregar una nueva reserva
+    formReserva.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nuevaReserva = {
+        id: reservas.length + 1,
+        usuario: formReserva.usuario.value,
+        fecha: formReserva.fecha.value,
+        habitacion: formReserva.habitacion.value,
+        estado: formReserva.estado.value,
+      };
+      reservas.push(nuevaReserva);
+      renderReservas();
+      formReserva.reset();
+    });
+
+    // Eliminar reserva
+    function eliminarReserva(index) {
+      reservas.splice(index, 1);
+      renderReservas();
+    }
+
+    // Inicializar tabla
+    renderReservas();
+  </script>
+</body>
+</html>
