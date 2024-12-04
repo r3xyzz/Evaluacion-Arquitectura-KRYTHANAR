@@ -5,16 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
     <link rel="stylesheet" href="CSS/estilo.css">
+    <style>
+        /* Estilo adicional para el botón de iniciar sesión */
+        .login-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50; /* Verde, puedes cambiarlo */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-button:hover {
+            background-color: #45a049; /* Un verde más oscuro */
+        }
+
+        /* Asegurar que el body no tenga margenes por defecto */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            position: relative;
+            padding: 20px;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .menu-container {
+            margin: 20px;
+            text-align: center;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <header>
+        <button class="login-button" onclick="window.location.href='Cuenta/login.html';">Iniciar Sesión</button>
+        <br>
+        <br>
         <h1>Menu Principal KRYSTHANAR</h1>
     </header>
 
     <main class="menu-container">
         <button onclick="window.location.href='Reserva/Reserva.html';">Hacer reserva Santiago</button>
         <button type="button" onclick="window.location.href='../Reserva/Reserva.html';">Hacer reserva V Región</button>
-        <button onclick = "window.location.href='Cuenta/Cuenta.html';">Perfil</button>
+        <button onclick="window.location.href='Cuenta/Cuenta.html';">Perfil</button>
     </main>
 
     <script src="JS/menu-scripts.js"></script>
