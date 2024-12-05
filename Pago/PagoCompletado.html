@@ -37,25 +37,43 @@
             margin: 15px 0 10px;
             color: #34495e;
         }
-
-        .payment-container polloql{
+        .payment-container .polloql {
             width: 100px;
             margin: 10px;
         }
+        .payment-container button {
+            background: linear-gradient(90deg, #f39c12, #f1c40f);
+            border: none;
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .payment-container button:hover {
+            background: linear-gradient(90deg, #f1c40f, #f39c12);
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
-    <body>
-        <div class="payment-container">
-            <img src="/IMG/logo.png" alt="Logo">
-            <h1>KRYTHANAR HOTEL</h1>
-            <br>
-        
-            <h1>FELICIDADES TU RESERVA FUE COMPLETADA</h1>
-            <h2>Gracias por elegirnos</h2>
-            <h2>En tu correo encontraras la factura del pago</h2>
-        
-            <img src="/IMG/polloql.png" class="polloql">
-        
-        </div>
-    </body>
+<body>
+    <div class="payment-container">
+        <img src="/IMG/logo.png" alt="Logo">
+        <h1>KRYTHANAR HOTEL</h1>
+        <br>
+    
+        <h1>FELICIDADES TU RESERVA FUE COMPLETADA</h1>
+        <h2>Gracias por elegirnos</h2>
+        <h2>En tu correo encontrarás la factura del pago</h2>
+    
+        <img src="/IMG/polloql.png" class="polloql">
+        <br>
+
+        <button onclick="window.location.href='DescargarFact.html';">Descarga el archivo aquí!</button>
+    
+    </div>
+</body>
 </html>
